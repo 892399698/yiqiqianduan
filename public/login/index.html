@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+</head>
+
+<body>
+    <form>
+        <ul>
+            <li>
+                <label>user name:</label>
+                <span>
+					<input id="user_name" type="" name="">
+				</span>
+            </li>
+            <li>
+                <label>password:</label>
+                <span>
+					<input id="password" type="password" name="">
+				</span>
+            </li>
+        </ul>
+        <p>
+            <input type="submit" name="" value="login">
+        </p>
+    </form>
+    <script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('form').submit(function(e) {
+            var userName = $.trim($('#user_name').val()),
+                password = $.trim($('#password'));
+            if (!userName || !password) {
+                alert('用户名或密码不能为空!');
+                return false;
+            }
+            $.post('/backend/logins', {
+                userName: userName,
+                password: password
+            }).always(function(res) {
+                if (res && res.code === 1000) {
+                    window.location.href = '/admin';
+                } else {
+                    var err = (res && res.message) ? res.message : '登录失败，请重试！';
+                    alert(err);
+                    return false;
+                }
+            })
+            e.preventDefault();
+        })
+    })
+    </script>
+</body>
+
+</html>

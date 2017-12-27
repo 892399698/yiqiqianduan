@@ -1,27 +1,24 @@
 import React from 'react';
-class baseComponent from React.Component {
+import UDL from '../../common/UDL';
+class baseComponent extends React.Component {
     constructor(props) {
         super(props);
+
+    }
+    validate(v) {
+        let result = {
+            valid: true
+        }
+        let {required, field} = this.props;
+        if (required) {
+            if (!v) {
+                result.valid = false;
+                result.message = UDL.g('tip.error.fieldEmpty', [field.fieldName]);
+            }
+        }
+        return result;
+
     }
 
-    validate() {
-    	let result={
-    		valid:true
-    	}
-        let {
-            required,
-            fieldName
-        } = this.props;
-        let {
-            value
-        } = this.state;
-        if (required) {
-        	if(!value){
-        		result.valid=false;
-        		result.message=`${fieldName}不能为空!`;
-        		return result ;
-        	}
-        }
-    }
 }
-export baseComponent;
+export default baseComponent;

@@ -1,5 +1,4 @@
 import fieldTypeInputMappings from "../../../components/field-type-inputs";
-// import date from '../date';
 
 function getFieldValueComponentConfigTable() {
     return [{
@@ -8,7 +7,7 @@ function getFieldValueComponentConfigTable() {
         attributes: {
             classNames: "udesk-sdk-ticket-input-control",
             autofocus: true,
-        },
+        }
     }, {
         fieldType: "password",
         component: fieldTypeInputMappings.TextboxEdit,
