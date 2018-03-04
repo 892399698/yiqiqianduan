@@ -5,7 +5,7 @@ class HeaderCustom extends React.Component {
         super(props);
     }
     render(){
-        return <div className="yiqiqianduan-content-layout"></div>;
+        return (<div className="yiqiqianduan-content-layout">{this.props.children}</div>);
     }
 }
 

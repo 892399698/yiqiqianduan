@@ -17,6 +17,7 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 // import Drags from '../components/ui/Draggable';
 import Dashboard from '../components/dashboard/Dashboard';
 import Articles from '../components/articles/index';
+import Columns from '../components/columns/index';
 // import AddArticle from '../components/articles/addArticle';
 // import Gallery from '../components/ui/Gallery';
 // import BasicAnimations from '../components/animation/BasicAnimations';
@@ -39,6 +40,7 @@ export default class CRouter extends Component {
             <Switch>
                 <Route exact path="/app/dashboard/index" component={Dashboard} />
                 <Route exact path="/app/articles/list" component={Articles} />
+                <Route exact path="/app/columns/list" component={Columns} />
 
                 <Route render={() => <Redirect to="/404" />} />
             </Switch>

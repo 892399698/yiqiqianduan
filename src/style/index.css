@@ -1,1 +1,36 @@
 @import url(/vendor/iconfont/iconfont.css);
+* {
+  margin: 0;
+  padding: 0; }
+
+input {
+  outline: none; }
+
+.yiqiqianduan-siderbar {
+  position: absolute;
+  left: 0;
+  width: 200px;
+  bottom: 0;
+  top: 0; }
+
+.yiqiqianduan-content-layout {
+  position: relative; }
+
+.yiqiqianduan-loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0.3;
+  background-color: #000; }
+
+.yiqiqianduan-container-layout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 210px;
+  bottom: 0;
+  background-color: #efefef; }
+  .yiqiqianduan-container-layout > .yiqiqianduan-content-layout {
+    height: 100%; }

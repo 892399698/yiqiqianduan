@@ -8,6 +8,12 @@ export const menus = [
         ],
     },
     {
+        key:'/app/columns',title:'栏目管理',icon:'',
+        sub:[
+            {key:'/app/columns/list',title:'所有栏目',icon:''}
+        ]
+    },
+    {
         key:'/app/articles',title:'文章管理',icon:'',
         sub:[
             {key:'/app/articles/list',title:'文章列表',icon:''}

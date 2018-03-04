@@ -52,7 +52,7 @@ class App extends Component {
         return (
             <Layout>
                 {!responsive.data.isMobile && <SiderCustom collapsed={this.state.collapsed} />}
-                <Layout style={{ flexDirection: 'column' }}>
+                <Layout layoutClass="yiqiqianduan-container-layout">
                     <HeaderCustom toggle={this.toggle} collapsed={this.state.collapsed} user={auth.data || {}} />
                     <Content style={{ margin: '0 16px', overflow: 'initial' }}>
                         <Routes auth={auth} />

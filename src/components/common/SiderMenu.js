@@ -6,22 +6,30 @@ const renderMenuItem =
     ({ key, title, icon, link, ...props }) =>
         <div className="yiqiqianduan-menu-item"
             key={key || link}
-            {...props}
+            // {...props}
         >
             <Link to={link || key}>
-                {icon && <div className={'icon '+icon} />}
+                {icon && <div className={'icon ' + icon} />}
                 <span className="nav-text">{title}</span>
             </Link>
         </div>;
 
 const renderSubMenu =
     ({ key, title, icon, link, sub, ...props }) =>
-        <div className="yiqiqianduan-menu-sub-item"
+        <div className="yiqiqianduan-menu-item"
             key={key || link}
-            // title={ title }
-            {...props}
-        >
-            {sub && sub.map(item => renderMenuItem(item))}
+            // {...props}
+        >   
+            <div className="qianduan-menu-submenu-title">
+                {icon && <div className={'icon ' + icon} />}
+                <span className="nav-text">{title}</span>
+            </div>
+            <ul className="yiqiqianduan-menu-sub-item"
+                key={key || link}
+            >
+                {sub && sub.map(item => renderMenuItem(item))}
+            </ul>
+            
         </div>;
 
 export default ({ menus, ...props }) => <div className="yiqiqianduan-sidermenu">
